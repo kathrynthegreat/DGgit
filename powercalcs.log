@@ -1,0 +1,169 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/kathrynvasilaky/Documents/Kentaro/powercalcs.log
+  log type:  text
+ opened on:   9 Oct 2012, 18:02:29
+
+. *Power Calcs
+. 
+. /*
+>  Assumptions:
+>  - standard deviation of agricultural output equals mean
+>  - treatment effect increases output by 30% (or the take-up differential is .3)
+>  - intra-cluster correlation of 10%
+>  - correlation between baseline and endline of 40%
+>  - power of 80%
+>  */
+.  
+.  
+. *starting adoption rate=30%, ending adoption rate is 60%, alpha=.05, 1-b=.8, correlation between baseline and endline=.4
+.  sampsi .3 .6, alpha(.05) power(.8) r01(.4) 
+
+Estimated sample size for two-sample comparison of proportions
+
+Test Ho: p1 = p2, where p1 is the proportion in population 1
+                    and p2 is the proportion in population 2
+Assumptions:
+
+         alpha =   0.0500  (two-sided)
+         power =   0.8000
+            p1 =   0.3000
+            p2 =   0.6000
+         n2/n1 =   1.00
+
+Estimated required sample sizes:
+
+            n1 =       49
+            n2 =       49
+
+. 
+. *With 40 observations per cluster, intraclass corr=.1, the sample is about 850*2
+. 
+.  sampclus, obsclus(40) rho(.1)
+
+Sample Size Adjusted for Cluster Design
+
+   n1 (uncorrected) = 49
+   n2 (uncorrected) = 49
+
+   Intraclass correlation     = .1
+
+   Average obs. per cluster   = 40
+   Minimum number of clusters = 13
+
+
+   Estimated sample size per group:
+
+      n1 (corrected) = 241
+      n2 (corrected) = 241
+
+. 
+. *Wiht 10 observations per cluster, the sampel is about 330*2
+. 
+.  sampclus, obsclus(10) rho(.1) 
+
+Sample Size Adjusted for Cluster Design
+
+   n1 (uncorrected) = 49
+   n2 (uncorrected) = 49
+
+   Intraclass correlation     = .1
+
+   Average obs. per cluster   = 10
+   Minimum number of clusters = 19
+
+
+   Estimated sample size per group:
+
+      n1 (corrected) = 94
+      n2 (corrected) = 94
+
+. 
+.  
+.  
+.  *starting output=100, ending output=13-, 1-b=.8, alpha=.05, correlation between baseline and endline=.4, sd=mean output
+. 
+.  sampsi 100 130, alpha(.05) power(.8) r01(.4) sd1(100)
+
+Estimated sample size for two-sample comparison of means
+
+Test Ho: m1 = m2, where m1 is the mean in population 1
+                    and m2 is the mean in population 2
+Assumptions:
+
+         alpha =   0.0500  (two-sided)
+         power =   0.8000
+            m1 =      100
+            m2 =      130
+           sd1 =      100
+           sd2 =      100
+         n2/n1 =     1.00
+
+Estimated required sample sizes:
+
+            n1 =      175
+            n2 =      175
+
+. 
+. *With 40 observations per cluster, intraclass corr=.1, the sample is about 850*2
+. 
+.  sampclus, obsclus(40) rho(.1)
+
+Sample Size Adjusted for Cluster Design
+
+   n1 (uncorrected) = 175
+   n2 (uncorrected) = 175
+
+   Intraclass correlation     = .1
+
+   Average obs. per cluster   = 40
+   Minimum number of clusters = 43
+
+
+   Estimated sample size per group:
+
+      n1 (corrected) = 858
+      n2 (corrected) = 858
+
+. 
+. *Wiht 10 observations per cluster, the sampel is about 330*2
+. 
+.  sampclus, obsclus(10) rho(.1) 
+
+Sample Size Adjusted for Cluster Design
+
+   n1 (uncorrected) = 175
+   n2 (uncorrected) = 175
+
+   Intraclass correlation     = .1
+
+   Average obs. per cluster   = 10
+   Minimum number of clusters = 67
+
+
+   Estimated sample size per group:
+
+      n1 (corrected) = 333
+      n2 (corrected) = 333
+
+. 
+. 
+.  
+.  
+. close log
+unrecognized command:  close
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/ms/3h0hk8jd2mv0gwkccppx499r0000gn/T//SD00419.000000"
+
+.  
+. log close
+      name:  <unnamed>
+       log:  /Users/kathrynvasilaky/Documents/Kentaro/powercalcs.log
+  log type:  text
+ closed on:   9 Oct 2012, 18:02:36
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
